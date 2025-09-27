@@ -1,0 +1,43 @@
+{
+  "DtypescriptReactArrowFunctionExportComponent": {
+    "prefix": "tsrafce",
+    "body": [
+      "type Props = {}",
+      "",
+      "const ${TM_FILENAME_BASE} = (props: Props) => {",
+      "  return (",
+      "    <div>${TM_FILENAME_BASE}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ],
+    "description": "CUSTOM Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
+  },
+  "DreactArrowFunctionExportComponent": {
+    "prefix": "rafce",
+    "body": [
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return (",
+      "    <div>${TM_FILENAME_BASE}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ],
+    "description": "CUSTOM Creates a React Arrow Function Component with ES7 module system"
+  },
+  "reactFunctionalExportComponent": {
+    "prefix": "rfce",
+    "body": [
+      "function ${1:${TM_FILENAME_BASE}}() {",
+      "  return (",
+      "    <div>${TM_FILENAME_BASE}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE}"
+    ],
+    "description": "CUSTOM Creates a React Functional Component with ES7 module system"
+  }
+}
