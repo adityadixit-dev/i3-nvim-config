@@ -52,4 +52,4 @@ end, { desc = "Previous todo comment" })
 --
 
 -- keymap.set({ "n", "v" }, "<leader>oa", "<cmd>CodeCompanionActions<cr>", { desc = "Code Companion Actions" })
--- keymap.set({ "n", "v" }, "<leader>oo", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "Code Companion chat" })
+keymap.set({ "n", "v" }, "<leader>oo", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "Code Companion chat" })
