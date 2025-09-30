@@ -52,6 +52,27 @@ return {
 				show_on_insert_on_trigger_character = false,
 				show_on_x_blocked_trigger_characters = { "'", '"', "(", "{", "<", ">", "}", ")", "[", "]" },
 			},
+
+			-- adding menu completion
+			menu = {
+				draw = {
+					columns = {
+						{ "kind_icon", "label", "label_description", "source_name", gap = 1 },
+					},
+					components = {
+						label_description = {
+							width = { max = 50 },
+						},
+						source_name = {
+							text = function(ctx)
+								return "[" .. ctx.source_name .. "]"
+							end,
+						},
+					},
+				},
+			},
+
+			-- adding menu completion
 		},
 
 		-- Default list of enabled providers defined so that you can extend it
