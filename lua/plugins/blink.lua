@@ -52,16 +52,12 @@ return {
 				show_on_insert_on_trigger_character = false,
 				show_on_x_blocked_trigger_characters = { "'", '"', "(", "{", "<", ">", "}", ")", "[", "]" },
 			},
-			ghost_text = { enabled = true },
 		},
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "codecompanion", "lsp", "snippets", "path", "buffer" },
-			per_filetype = {
-				codecompanion = { "codecompanion" },
-			},
+			default = { "lsp", "snippets", "path", "buffer" },
 			providers = {
 				lsp = {
 					min_keyword_length = 2,
