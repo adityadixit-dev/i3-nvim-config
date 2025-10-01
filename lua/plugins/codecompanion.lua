@@ -16,6 +16,7 @@ return {
 				})
 			end,
 		},
+		"j-hui/fidget.nvim",
 	},
 
 	opts = {
@@ -98,10 +99,14 @@ return {
 			},
 			chat = {
 				window = {
-					width = 0.37,
+					width = 0.4,
 				},
 				fold_context = false,
 			},
 		},
 	},
+
+	init = function()
+		require("plugins.codecompanion.fidget-spinner"):init()
+	end,
 }
