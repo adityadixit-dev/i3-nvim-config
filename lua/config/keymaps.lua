@@ -50,7 +50,7 @@ end, { desc = "Previous todo comment" })
 
 -- Keymaps for code companion
 
--- keymap.set({ "n", "v" }, "<leader>oa", "<cmd>CodeCompanionActions<cr>", { desc = "Code Companion Actions" })
+keymap.set({ "n", "v" }, "<leader>oa", "<cmd>CodeCompanionActions<cr>", { desc = "Code Companion Actions" })
 keymap.set({ "n", "v" }, "<leader>oo", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "Toggle Code Companion chat" })
 keymap.set({ "n", "v" }, "<leader>oi", ":CodeCompanion ", { desc = "Inline Assistant" })
 
@@ -63,3 +63,7 @@ end, { noremap = true, silent = true, desc = "Explain Selected Code" })
 keymap.set("v", "<leader>of", function()
 	require("codecompanion").prompt("fix")
 end, { noremap = true, silent = true, desc = "Fix Selected Code" })
+
+keymap.set({ "n", "v" }, "<leader>os", function()
+	require("codecompanion").prompt("syntax")
+end, { noremap = true, silent = true, desc = "Get help with syntax" })

@@ -20,57 +20,6 @@ return {
 	},
 
 	opts = {
-		adapters = {
-			http = {
-				deepseek = function()
-					return require("codecompanion.adapters").extend("ollama", {
-						name = "deepseek", -- Give this adapter a different name to differentiate it from the default ollama adapter
-						opts = {
-							vision = false,
-							stream = true,
-						},
-						schema = {
-							model = {
-								default = "deepseek-coder-v2:latest",
-							},
-							num_ctx = {
-								default = 16384,
-							},
-							think = {
-								default = true,
-							},
-							keep_alive = {
-								default = "20m",
-							},
-						},
-					})
-				end,
-
-				qwen3 = function()
-					return require("codecompanion.adapters").extend("ollama", {
-						name = "qwen3", -- Give this adapter a different name to differentiate it from the default ollama adapter
-						opts = {
-							vision = false,
-							stream = true,
-						},
-						schema = {
-							model = {
-								default = "qwen3:8b-q8_0",
-							},
-							num_ctx = {
-								default = 16384,
-							},
-							think = {
-								default = true,
-							},
-							keep_alive = {
-								default = "20m",
-							},
-						},
-					})
-				end,
-			},
-		},
 		strategies = {
 			chat = {
 				adapter = {
@@ -85,24 +34,30 @@ return {
 				},
 			},
 			cmd = {
-				adapter = "qwen3",
+				adapter = {
+					name = "openai",
+					model = "gpt-5-mini",
+				},
 			},
 		},
 		display = {
 			action_palette = {
 				provider = "snacks",
 				opts = {
-					show_default_actions = false,
-					show_default_prompt_library = false,
+					show_default_actions = true,
+					show_default_prompt_library = true,
 					title = "Code Companion Actions",
 				},
 			},
 			chat = {
 				window = {
-					width = 0.4,
+					width = 0.40,
 				},
-				fold_context = false,
+				fold_context = true,
 			},
+		},
+		prompt_library = {
+			["Syntax Helper"] = require("plugins.codecompanion.prompts.language-syntax"),
 		},
 	},
 
