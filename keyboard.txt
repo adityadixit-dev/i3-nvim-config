@@ -1,0 +1,2 @@
+exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id xmodmap -e "keycode 9 = grave asciitilde"
