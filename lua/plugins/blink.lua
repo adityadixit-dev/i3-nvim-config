@@ -89,6 +89,12 @@ return {
 						search_paths = { "~/.config/nvim/snippets" },
 					},
 				},
+				path = {
+					min_keyword_length = 3,
+				},
+				buffer = {
+					min_keyword_length = 4,
+				},
 			},
 		},
 
