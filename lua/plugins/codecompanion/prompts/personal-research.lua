@@ -1,9 +1,9 @@
 return {
-	strategy = "chat",
+	interaction = "chat",
 	description = "Help with language syntax",
 	opts = {
 		modes = { "v", "n" },
-		short_name = "research",
+		alias = "research",
 		auto_submit = false,
 		user_prompt = true,
 

@@ -20,11 +20,24 @@ return {
 	},
 
 	opts = {
-		strategies = {
+		adapters = {
+			acp = {
+				codex = function()
+					return require("codecompanion.adapters").extend("codex", {
+						defaults = {
+							auth_method = "openai-api-key", -- "openai-api-key"|"codex-api-key"|"chatgpt"
+							model = "gpt-5.1-codex-mini",
+						},
+					})
+				end,
+			},
+		},
+
+		interactions = {
 			chat = {
 				adapter = {
-					name = "openai",
-					model = "gpt-5-mini",
+					name = "codex",
+					model = "gpt-5.1-codex-mini",
 				},
 			},
 			inline = {
@@ -42,10 +55,14 @@ return {
 		},
 		display = {
 			action_palette = {
+				width = 95,
+				height = 10,
 				provider = "snacks",
+
 				opts = {
-					show_default_actions = true,
-					show_default_prompt_library = true,
+					show_preset_actions = true,
+					show_preset_prompts = true,
+					show_prompt_library_builtins = true,
 					title = "Code Companion Actions",
 				},
 			},

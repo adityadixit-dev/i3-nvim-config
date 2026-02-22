@@ -1,11 +1,16 @@
 return {
-	strategy = "chat",
+	interaction = "chat",
 	description = "Generate Documentation",
 	opts = {
 		modes = { "v", "n" },
-		short_name = "docs",
+		alias = "docs",
 		auto_submit = true,
 		user_prompt = false,
+
+		adapter = {
+			name = "openai",
+			model = "gpt-5-nano",
+		},
 	},
 	prompts = {
 		{

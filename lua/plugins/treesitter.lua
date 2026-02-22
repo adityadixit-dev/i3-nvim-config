@@ -1,8 +1,8 @@
-return { 
+return {
 	-- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	main = "nvim-treesitter.configs", -- Sets main module to use for opts
+	main = "nvim-treesitter.config", -- Sets main module to use for opts
 	opts_extend = { "ensure_installed" },
 	opts = {
 		ensure_installed = {
@@ -22,6 +22,8 @@ return {
 			"json",
 			"tsx",
 			"css",
+			"python",
+			"yaml",
 		},
 		-- Autoinstall languages that are not installed
 		auto_install = true,
@@ -29,6 +31,6 @@ return {
 		highlight = {
 			enable = true,
 		},
-		indent = { enable = true   },
+		indent = { enable = true },
 	},
 }

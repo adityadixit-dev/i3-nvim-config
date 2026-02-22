@@ -1,11 +1,16 @@
 return {
-	strategy = "chat",
+	interaction = "chat",
 	description = "Help with language syntax",
 	opts = {
 		modes = { "v", "n" },
-		short_name = "syntax",
+		alias = "syntax",
 		auto_submit = true,
 		user_prompt = true,
+
+		adapter = {
+			name = "openai",
+			model = "gpt-5-nano",
+		},
 	},
 	prompts = {
 		{
