@@ -24,7 +24,7 @@ return {
 			chat = {
 				adapter = {
 					name = "openai",
-					model = "gpt-5-nano",
+					model = "gpt-5-mini",
 				},
 			},
 			inline = {
@@ -58,6 +58,8 @@ return {
 		},
 		prompt_library = {
 			["Syntax Helper"] = require("plugins.codecompanion.prompts.language-syntax"),
+			["Personal Research"] = require("plugins.codecompanion.prompts.personal-research"),
+			["Write Docs"] = require("plugins.codecompanion.prompts.generate-docs"),
 		},
 	},
 

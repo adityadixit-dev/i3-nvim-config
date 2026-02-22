@@ -64,6 +64,27 @@ keymap.set("v", "<leader>of", function()
 	require("codecompanion").prompt("fix")
 end, { noremap = true, silent = true, desc = "Fix Selected Code" })
 
+keymap.set({ "n", "v" }, "<leader>od", function()
+	require("codecompanion").prompt("docs")
+end, { noremap = true, silent = true, desc = "Help writing documentation" })
+
 keymap.set({ "n", "v" }, "<leader>os", function()
 	require("codecompanion").prompt("syntax")
 end, { noremap = true, silent = true, desc = "Get help with syntax" })
+
+keymap.set({ "n", "v" }, "<leader>or", function()
+	require("codecompanion").prompt("research")
+end, { noremap = true, silent = true, desc = "Personal Research Assistant" })
+
+keymap.set({ "v" }, "<leader>ol", function()
+	require("codecompanion").prompt("lsp")
+end, { noremap = true, silent = true, desc = "Get help with lsp diagnostic" })
+
+-- Keymaps for Fedora Wayland KDE
+-- Copy to system clipboard (using "+ register)
+vim.keymap.set("n", "<leader>yc", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "<leader>yc", '"+y', { desc = "Yank visual selection to system clipboard" })
+
+-- Paste from system clipboard (using "+ register)
+vim.keymap.set("n", "<leader>pc", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set("v", "<leader>pc", '"+p', { desc = "Paste from system clipboard" })

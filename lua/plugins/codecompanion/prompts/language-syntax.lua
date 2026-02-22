@@ -11,7 +11,7 @@ return {
 		{
 			role = "system",
 			content = function(context)
-				local extraSteps = string.format("The syntaxt MAY be used in buffer %d", context.bufnr)
+				local extraSteps = string.format("The syntax MAY be used in buffer %d", context.bufnr)
 
 				return "I want you to act as a senior "
 					.. context.filetype
