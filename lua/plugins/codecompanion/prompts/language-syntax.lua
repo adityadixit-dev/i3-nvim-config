@@ -9,7 +9,7 @@ return {
 
 		adapter = {
 			name = "openai",
-			model = "gpt-5-nano",
+			model = "gpt-5-mini",
 		},
 	},
 	prompts = {

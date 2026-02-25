@@ -2,6 +2,7 @@ return {
 	"olimorris/codecompanion.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-treesitter/nvim-treesitter",
 		{
 			"MeanderingProgrammer/render-markdown.nvim",
 			ft = { "markdown", "codecompanion" },
@@ -20,25 +21,14 @@ return {
 	},
 
 	opts = {
-		adapters = {
-			acp = {
-				codex = function()
-					return require("codecompanion.adapters").extend("codex", {
-						defaults = {
-							auth_method = "openai-api-key", -- "openai-api-key"|"codex-api-key"|"chatgpt"
-							model = "gpt-5.1-codex-mini",
-						},
-					})
-				end,
-			},
-		},
 
 		interactions = {
 			chat = {
-				adapter = {
-					name = "codex",
-					model = "gpt-5.1-codex-mini",
-				},
+				adapter = { name = "opencode" },
+				-- adapter = {
+				-- 	name = "openai",
+				-- 	model = "gpt-5-mini",
+				-- },
 			},
 			inline = {
 				adapter = {
@@ -62,7 +52,6 @@ return {
 				opts = {
 					show_preset_actions = true,
 					show_preset_prompts = true,
-					show_prompt_library_builtins = true,
 					title = "Code Companion Actions",
 				},
 			},
@@ -70,7 +59,15 @@ return {
 				window = {
 					width = 0.40,
 				},
-				fold_context = true,
+				auto_scroll = true,
+				show_token_count = true,
+
+				fold_context = false,
+				fold_reasoning = false,
+				show_reasoning = true,
+				show_settings = false,
+				-- show_settings = true,
+				start_in_insert_mode = true,
 			},
 		},
 		prompt_library = {

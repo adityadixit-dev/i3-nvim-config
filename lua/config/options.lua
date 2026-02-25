@@ -52,3 +52,6 @@ opt.swapfile = false
 
 -- Cursor Shape
 --
+--
+-- Allow autoread
+opt.autoread = true
